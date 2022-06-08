@@ -1,0 +1,68 @@
+{
+    "appConfig": {
+        "PORT": 4001,
+        "mediatorName": "EBS ODK Central"
+    },
+    "development": {
+        "username": "",
+        "password": "",
+        "database": "",
+        "host": "",
+        "dialect": "mysql",
+        "define": {
+            "timestamps": false,
+            "freezeTableName": true
+        },
+        "logging": false,
+        "port": 3306
+    },
+    "test": {
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "emailAuth": {
+        "user": "",
+        "pass": ""
+    },
+    "API_KEYS": {
+        "MJ_APIKEY_PUBLIC": "",
+        "MJ_APIKEY_PRIVATE": ""
+    },
+    "authConfig": {
+        "name": "odk-central-user",
+        "password": "ODK2022"
+    },
+    "openhimConfig": {
+        "username": "",
+        "password": "",
+        "apiURL": "https://openhim-core:8080"
+    },
+    "odkCentralConfig": {
+        "username": "",
+        "password": "",
+        "apiURL": "https://ptracker-odk.globalhealthapp.net/v1/projects/9/forms/",
+        "headers": {
+            "Postman-Token": "",
+            "cache-control": "no-cache",
+            "Content-Type": "application/json",
+            "apikey": ""
+        },
+        "headersCsv": {
+            "Content-Type": "text/csv"
+        },
+        "headersXLS": {
+            "Content-Type": "text",
+            "X-XlsForm-FormId-Fallback": ""
+        }
+    }
+}
