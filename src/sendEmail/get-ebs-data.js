@@ -37,9 +37,10 @@ function sendMail(ebs_id) {
                     "Email": "collin.nehemia@ucglobalprograms.org",
                     "Name": "EBS Reporting Tool"
                 },
-                "To": [{
-                    "Email": "collin.nehemia@ucglobalprograms.org",
-                }],
+                "To": [
+                    {"Email": "collin.nehemia@ucglobalprograms.org"}
+                    ],
+
                 "Subject": "EBS Passed Records",
                 "TextPart": "My first Mailjet email",
                 "HTMLPart": `<!doctype html>
@@ -426,7 +427,7 @@ function sendMail(ebs_id) {
                               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td class="content-block">
-                                    <span class="apple-link">Company Inc, UCSF, San Francisco CA</span>
+                                    <span class="apple-link">UCSF, San Francisco CA</span>
                                     <br> Don't like these emails? <a href="">Unsubscribe</a>.
                                   </td>
                                 </tr>

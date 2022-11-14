@@ -9,20 +9,16 @@ const app = express();
 // openHIM
 getQueryParameters();
 
-app.all('*', async(req, res) => {
+app.all('*', async (req, res) => {
     // Starts when a new request is triggered by the polling channel
     console.log(`\n---------------------------------------------------------------------------------`,
-        `\n${ new Date().toUTCString('en-GB', { timeZone: 'UTC' }) }  - `,
+        `\n${new Date().toUTCString('en-GB', { timeZone: 'UTC' })}  - `,
         `The ODK Central EBS has received a new request. \n`
     );
     ebsData.getEbsData()
         .then((results) => {
-            try {
-                res.json('EBS Data from ODK Central retrieved.')
-            } catch (error) {
-                console.error(`Error retrieving EBS Data from ODK Central: ${error}`)
-            }
-
+            res.send(results);
+            res.json('EBS Data from ODK Central retrieved.');
         }).catch(error => { console.error(`Error retrieving EBS Data: ${error}`) })
 });
 //ebsData.getEbsData();
