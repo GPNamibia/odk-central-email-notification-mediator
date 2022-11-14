@@ -4,10 +4,10 @@
         "mediatorName": "EBS ODK Central"
     },
     "development": {
-        "username": "",
-        "password": "",
-        "database": "",
-        "host": "",
+        "username": "root",
+        "password": "password",
+        "database": "ebs_mysql",
+        "host": "mysql-repo",
         "dialect": "mysql",
         "define": {
             "timestamps": false,
@@ -27,29 +27,29 @@
         "username": "",
         "password": null,
         "database": "",
-        "host": "127.0.0.1",
+        "host": "mysql-repo",
         "dialect": "mysql"
     },
     "emailAuth": {
-        "user": "",
-        "pass": ""
+        "user": "collin.nehemia@ucglobalprograms.org",
+        "pass": "@Iyaloooo3"
     },
     "API_KEYS": {
-        "MJ_APIKEY_PUBLIC": "",
-        "MJ_APIKEY_PRIVATE": ""
+        "MJ_APIKEY_PUBLIC": "9108c2cb8429ca6cab45530158debdfb",
+        "MJ_APIKEY_PRIVATE": "5ff6d1e8cce05b606591ca330e3bfec6"
     },
     "authConfig": {
         "name": "odk-central-user",
         "password": "ODK2022"
     },
     "openhimConfig": {
-        "username": "",
-        "password": "",
+        "username": "root@openhim.org",
+        "password": "rehgob-5pExzi-kohpyz",
         "apiURL": "https://openhim-core:8080"
     },
     "odkCentralConfig": {
-        "username": "",
-        "password": "",
+        "username": "collin.nehemia@ucglobalprograms.org",
+        "password": "jehonia@ucsf",
         "apiURL": "https://ptracker-odk.globalhealthapp.net/v1/projects/9/forms/",
         "headers": {
             "Postman-Token": "",

@@ -38,7 +38,9 @@ function sendMail(ebs_id) {
                     "Name": "EBS Reporting Tool"
                 },
                 "To": [
-                    {"Email": "collin.nehemia@ucglobalprograms.org"}
+                    {"Email": "asen.mwandemele@ucglobalprograms.org"},
+                    {"Email": " Solange.Madriz@ucsf.edu"},
+                    {"Email": "michelle.moghadassi@ucsf.edu "}
                     ],
 
                 "Subject": "EBS Passed Records",
