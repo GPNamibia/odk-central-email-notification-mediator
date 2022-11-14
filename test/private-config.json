@@ -1,6 +1,6 @@
 {
     "appConfig": {
-        "PORT": 4001,
+        "PORT": 4000,
         "mediatorName": "EBS ODK Central"
     },
     "development": {
@@ -17,26 +17,18 @@
         "port": 3306
     },
     "test": {
-        "username": "",
+        "username": "root",
         "password": null,
-        "database": "",
+        "database": "database_test",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "production": {
-        "username": "",
+        "username": "root",
         "password": null,
-        "database": "",
-        "host": "mysql-repo",
+        "database": "database_production",
+        "host": "127.0.0.1",
         "dialect": "mysql"
-    },
-    "emailAuth": {
-        "user": "collin.nehemia@ucglobalprograms.org",
-        "pass": "@Iyaloooo3"
-    },
-    "API_KEYS": {
-        "MJ_APIKEY_PUBLIC": "9108c2cb8429ca6cab45530158debdfb",
-        "MJ_APIKEY_PRIVATE": "5ff6d1e8cce05b606591ca330e3bfec6"
     },
     "authConfig": {
         "name": "odk-central-user",
