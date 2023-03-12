@@ -10,9 +10,9 @@ async function retrieveRecordsFromMysql(model, table_name) {
         await sqlBuilder.readData(model)
             .then(async(res) => {
                 res.forEach(async(value) => {
-                    if (value.ebs_triage_result == "Passed") {
+                    if (value.vbe_triage_result == "Passed") {
                         uuidLink = value.uuid.slice(5);
-                        await sendMail(value.ebs_id);
+                        await sendMail(value.vbe_id);
                         await console.log(`Email notification for:【${value.uuid}】succesfully ✅ sent`);
                         await sqlBuilder.updateEmailStatusToMysql(model, value.uuid)
                     } else {
@@ -25,7 +25,7 @@ async function retrieveRecordsFromMysql(model, table_name) {
 
 
 // // Send Mail function using Nodemailer
-function sendMail(ebs_id) {
+function sendMail(vbe_id) {
 
     const mailjet = require('node-mailjet')
         .connect(privateConfig.API_KEYS.MJ_APIKEY_PUBLIC, privateConfig.API_KEYS.MJ_APIKEY_PRIVATE)
@@ -35,15 +35,16 @@ function sendMail(ebs_id) {
             "Messages": [{
                 "From": {
                     "Email": "collin.nehemia@ucglobalprograms.org",
-                    "Name": "EBS Reporting Tool"
+                    "Name": "VBE Reporting Tool"
                 },
                 "To": [
-                    {"Email": "asen.mwandemele@ucglobalprograms.org"},
-                    {"Email": " Solange.Madriz@ucsf.edu"},
-                    {"Email": "michelle.moghadassi@ucsf.edu "}
+                    {"Email": privateConfig.emailConfig.first},
+                    {"Email": privateConfig.emailConfig.second},
+                    {"Email": privateConfig.emailConfig.third},
+                    {"Email": privateConfig.emailConfig.fourth}
                     ],
 
-                "Subject": "EBS Passed Records",
+                "Subject": "VBE Passed Records",
                 "TextPart": "My first Mailjet email",
                 "HTMLPart": `<!doctype html>
                 <html>
@@ -396,7 +397,7 @@ function sendMail(ebs_id) {
                                     <tr>
                                       <td>
                                         <p>Hi there,</p>
-                                        <p>EBS Signal ID : ${ebs_id} verified and now available for Risk Assesment.</p>
+                                        <p>VBE Signal ID : ${vbe_id} verified and now available for Risk Assesment.</p>
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                           <tbody>
                                             <tr>
@@ -412,7 +413,7 @@ function sendMail(ebs_id) {
                                             </tr>
                                           </tbody>
                                         </table>
-                                        <p>This is an automated email from the EBS Signal Detection Reporting Tool, do not reply.</p>
+                                        <p>This is an automated email from the VBE Signal Detection Reporting Tool, do not reply.</p>
                                         <p>Good luck! Stay safe.</p>
                                       </td>
                                     </tr>
