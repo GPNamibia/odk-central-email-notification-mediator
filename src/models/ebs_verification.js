@@ -1,6 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
     const stag_odk_anc = sequelize.define("ebs_verification", {
-        data_verify_name: {
+        vbe_id: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        data_verify_fname: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        data_verify_lname: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
@@ -10,43 +24,6 @@ module.exports = (sequelize, DataTypes) => {
         receive_date: {
             type: DataTypes.TEXT,
             allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
-        facility_district: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
-        facility_code: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
-        facility_name: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
-        ebs_id: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
-        uuid: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            primaryKey: true,
             validate: {
                 notEmpty: true
             }
@@ -72,9 +49,25 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
+        vbe_triage_result: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
         type_of_event: {
             type: DataTypes.TEXT,
             allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        uuid: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            primaryKey: true,
             validate: {
                 notEmpty: true
             }
@@ -135,13 +128,6 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        ebs_triage_result: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                notEmpty: true
-            }
-        },
         email_status: {
             type: DataTypes.TEXT,
             allowNull: true,
@@ -149,13 +135,27 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        review_state: {
+        establecimiento: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
+        distrito: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        establecimiento_nomserv: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        }
     });
 
     return stag_odk_anc;
